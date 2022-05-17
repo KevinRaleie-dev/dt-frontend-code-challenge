@@ -8,16 +8,21 @@
 // variables
 @color__jet: #333333;
 @color__rich-black: #0a0a0a;
+@color__eerie-black: #1F1F1F;
 @color__dodger-blue: #0093F5;
 @color__uranian-blue: #0093F5;
-@border__color: gray;
+@color__granite-gray: #666666;
+@border__color: @color__granite-gray;
 @text__color: #fafafa;
 @input__border__radius: 12px;
 @font: 'Open Sans', sans-serif;
 
 @background-gradient: linear-gradient(90deg, @color__jet, @color__rich-black);
 @card-background-gradient: linear-gradient(145deg, @color__jet, @color__rich-black);
-@button-gradient: linear-gradient(145deg, #AEDEFF, @color__dodger-blue );
+@next-button-gradient: linear-gradient(145deg, #AEDEFF, @color__dodger-blue );
+@back-button-gradient: linear-gradient(145deg, @color__jet, @color__eerie-black );
+@box-shadow: 1px 4px 10px rgb(0 0 0 / 0.2);
+@inner-box-shadow: inset 0 0 3px @color__rich-black;
 
 body {
     background: @background-gradient;
@@ -26,6 +31,7 @@ body {
 .container {
     max-width: 560px;
     margin: 0 auto;
+    font-family: @font;
 
     .container__card {
         background: @card-background-gradient;
@@ -33,6 +39,7 @@ body {
         border-radius: 8px;
         padding: 1rem;
         color: @text__color;
+        box-shadow: @box-shadow;
     }
 }
 
@@ -56,6 +63,9 @@ body {
                 padding: 0.5rem;
                 background-color: @color__jet;
                 border-radius: @input__border__radius;
+                box-shadow: @inner-box-shadow;
+                -moz-box-shadow: @inner-box-shadow;
+                -webkit-box-shadow: @inner-box-shadow;
             }
 
             .form__date-picker {
@@ -63,7 +73,7 @@ body {
                 flex-direction: row;          
                 .form__input {
                     width: 3.5rem;
-                    margin-right: 3px;
+                    margin-right: 4px;
                     border-radius: 0;
                 }
                 .form__input:nth-child(1) {
@@ -89,16 +99,17 @@ body {
         color: @text__color;
         padding: 0.5rem 1.5rem;
         border-radius: @input__border__radius;
+        box-shadow: @box-shadow;
         cursor: pointer;
     }
 
     .card__footer__btn:nth-child(1) {
-        background: @color__jet;
+        background: @back-button-gradient;
         border: 1px solid @border__color;
     }
     .card__footer__btn:last-child {
         border: 1px solid @text__color;
-        background: @button-gradient;
+        background: @next-button-gradient;
     }    
     
 }
