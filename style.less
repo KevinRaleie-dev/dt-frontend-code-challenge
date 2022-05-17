@@ -70,7 +70,8 @@ body {
 
             .form__date-picker {
                 display: flex;
-                flex-direction: row;          
+                flex-direction: row; 
+                align-items: center;         
                 .form__input {
                     width: 3.5rem;
                     margin-right: 4px;
@@ -80,7 +81,7 @@ body {
                     border-top-left-radius: @input__border__radius;
                     border-bottom-left-radius: @input__border__radius;
                 }
-                .form__input:last-child {
+                .form__input:nth-child(3) {
                     border-top-right-radius: @input__border__radius;
                     border-bottom-right-radius: @input__border__radius;
                 }
